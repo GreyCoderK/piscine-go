@@ -1,3 +1,3 @@
-#!/bin/bashfdf
+#!/bin/bash
 
 echo "Hello GreyCoderK!"
