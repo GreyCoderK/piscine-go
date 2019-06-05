@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ls -CF --format=commas -t | sed 's/ / /g'
+ls -CF --format=commas --tabsize=0 -t
