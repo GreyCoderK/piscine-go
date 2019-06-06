@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find . \( -type d,f \) -name "*.sh" | sort -r | cut --output-delimiter='.sh' -f1 | cut --output-delimiter='./' -f2
+find . \( -type d,f \) -name "*.sh" | sort -r | sed 's/^*.\/\(.*\).\/sh$/\1/'
