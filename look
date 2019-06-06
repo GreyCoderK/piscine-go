@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ls {a*,*z,z*a!} -d -r --file-type | sed 's/^\s*./0/g'
+ls {a*,*z,z*a!} -d -r --file-type | sed 's/^\s* /.\0/g'
