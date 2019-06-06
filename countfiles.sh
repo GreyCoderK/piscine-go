@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find . -type f | wc -l
+find . -type f,d | wc -l
