@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find . \( -type f \) -name "*.sh" | ls -r | sed 's/.sh//g'
+find . \( -type f,d \) -name "*.sh" | ls -r | sed 's/.sh//g'
