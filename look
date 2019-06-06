@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ls {a*,*z,z*a!} -d -r --file-type | sed 's/^/.\//g' | uniq
+find . -type f \( -name a* -o -name *z -o -name z*a!\) | uniq
