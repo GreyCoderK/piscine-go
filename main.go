@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "z01"
 
 func main(){
-	fmt.Println("abcdefghijklmnopqrstuvwxyz")
-}
+	z01.PrintRune("abcdefghijklmnopqrstuvwxyz")
+}s
