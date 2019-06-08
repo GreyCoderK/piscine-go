@@ -2,6 +2,6 @@ package piscine
 
 import "fmt"
 
-func PrintNbr(int n) {
+func PrintNbr(n int) {
 	fmt.Println(n)
 }
