@@ -30,5 +30,4 @@ func PrintComb2() {
                         }
         	}
     	}
-    }
 }
