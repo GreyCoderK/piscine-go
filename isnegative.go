@@ -2,7 +2,7 @@ package piscine
 
 import "fmt"
 
-func Isnegative(nb int) {
+func IsNegative(nb int) {
 	res := nb > 0
 	fmt.Println(res)
 }
