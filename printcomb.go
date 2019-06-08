@@ -1,27 +1,24 @@
 package piscine
 
 import (
-    "bytes"
     "fmt"
     "strconv"
 )
 
 func PrintComb() {
-    var buffer bytes.Buffer
-
-    for i := 12; i < 1000; i++ {
-	a := int(i/100)
-	b := int(i/10)
-	c := int(i%10)
-	if(a < b && b < c){
-		if(i>12) {
-			buffer.WriteString(", ")
-		}
-        	buffer.WriteString(strconv.Itoa(a))
-		buffer.WriteString(strconv.Itoa(b))
-		buffer.WriteString(strconv.Itoa(c))
-	}
+for i:=0; i<10; i++{ 
+    	for j:=i+1; j<10; j++{
+         	for k:=j+1; k<10; k++{
+			if i == 0 && j == 1 && k == 2 {
+				fmt.Print("")
+			}else{
+				fmt.Print(", ")
+			}
+			ch := strconv.Itoa(i)
+			ch += strconv.Itoa(j)
+			ch += strconv.Itoa(k)
+             		fmt.Print(ch)
+        	}
+    	}
     }
-
-    fmt.Println(buffer.String())
 }
