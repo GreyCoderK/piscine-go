@@ -5,8 +5,8 @@ import "fmt"
 func IsNegative(nb int) {
 	res := nb > 0
 	if res {
-		fmt.Println('T')
+		fmt.Print("%c\n","T")
 	}else{
-		fmt.Println('F')
+		fmt.Print("%c\n","F")
 	}
 }
