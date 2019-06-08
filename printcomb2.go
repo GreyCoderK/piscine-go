@@ -28,6 +28,9 @@ func PrintComb2() {
                         }else{ 
                                 fmt.Print(j)
                         }
+			if i==98 && j== 99{
+				print("\n")
+			}
         	}
     	}
 }
