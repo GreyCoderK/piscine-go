@@ -5,7 +5,7 @@ import (
     "strconv"
 )
 
-func PrintComb() {
+func PrintComb2() {
 	for i:=0; i<99; i++{ 
     		for j:=i+1; j<100; j++{
 			if i == 0 && j == 1 {
