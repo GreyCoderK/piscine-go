@@ -27,7 +27,7 @@ func combinaison1() {
 	}
 }
 
-func PrintCombn(n int) {
+func PrintCombN(n int) {
 	tab := [9]int{0, 1, 2, 3, 4, 5, 6, 7, 8}
 	max := [9]int{}
 
