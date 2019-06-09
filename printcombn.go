@@ -22,7 +22,7 @@ func combinaison1() {
 	tab := [9]int{0}
 	max := [9]int{9}
 	for tab[0] <= max[0] {
-		show3(1, tab, max)
+		show(1, tab, max)
 		tab[0]++
 	}
 }
