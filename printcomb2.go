@@ -29,7 +29,7 @@ func PrintComb2() {
                                 fmt.Print(j)
                         }
 			if i==98 && j== 99{
-				print("\n")
+				mt.Print("\n")
 			}
 			
         	}
