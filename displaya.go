@@ -1,5 +1,7 @@
 package piscine
 
-func displaya(s str) string {
-	return "a\n"
+import "fmt"
+
+func displaya(){
+	fmt.Print"a\n"
 }
