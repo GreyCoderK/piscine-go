@@ -21,9 +21,9 @@ func show(n int, tab [9]int, max [9]int) {
 func combinaison1() {
 	tab := [9]int{0}
 	max := [9]int{9}
-	for table[0] <= tmax[0] {
-		show3(1, table, tmax)
-		table[0]++
+	for tab[0] <= max[0] {
+		show3(1, tab, max)
+		tab[0]++
 	}
 }
 
