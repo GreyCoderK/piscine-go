@@ -2,7 +2,7 @@ package piscine
 
 import "strconv"
 
-func BasicAtoi(s string) int {
+func BasicAtoi2(s string) int {
 	i, err := strconv.Atoi(s)
 	
 	if err == nil {
