@@ -1,7 +1,7 @@
-package piscine
+package main
 
 import "fmt"
 
-func displaya(){
-	fmt.Print("a\n")
+func main(){
+	fmt.Print"a\n"
 }
