@@ -11,7 +11,7 @@ func Raid1b(x, y int){
 				}else if j == x-1 && i==0 || j == 0 && i == y-1 {
 					fmt.Print("\\")
 				} else {
-					fmt.Print("-")
+					fmt.Print("*")
 				}
 			} else {
 				if j == 0 || j == x-1 {
