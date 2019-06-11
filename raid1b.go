@@ -3,7 +3,7 @@ package piscine
 import "fmt"
 
 func Raid1b(x, y int){
-	if x == y && y == 1 {
+	if x == 1 && y == 1 {
 		fmt.Print("\\")
 	}else{
 		for i := 0; i < y; i++ {
