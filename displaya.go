@@ -1,4 +1,4 @@
-package student
+package piscine
 
 import "fmt"
 
