@@ -7,7 +7,7 @@ func Raid1b(x, y int){
 		for j := 0; j < x; j++ {
 			if i == 0 || i == y-1 {
 				if j == 0 && i==0 || j == x-1 && i == y-1 {
-					if i == y - 1 && x == 1 || i == 0 && j == x - 1 && y == 1{
+					if i == y - 1 && x == 1 || i == 0 && j == x - 1 && y == 1 || y == x && x == 1 {
 						fmt.Print("\\")
 					}else{
 						fmt.Print("/")
