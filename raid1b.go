@@ -4,7 +4,7 @@ import "fmt"
 
 func Raid1b(x, y int){
 	if x == 1 && y == 1 {
-		fmt.Print("\\")
+		fmt.Print("/\n")
 	}else{
 		for i := 0; i < y; i++ {
 			for j := 0; j < x; j++ {
