@@ -2,7 +2,7 @@ package piscine
 
 import "fmt"
 
-func Raid1d(x,y int) {
+func Raid1e(x,y int) {
     for i:=0; i < y; i++ {//boucle pour la longueur
         for j:=0; j < x; j++ {//boucle pour la largeur
             if i == 0 {//première ligne
@@ -22,11 +22,11 @@ func Raid1d(x,y int) {
             }else if i == y - 1{//dernière ligne
         if j == 0 || j == x - 1 {
             if j == 0{//première cologne
-                fmt.Print("A")
+                fmt.Print("C")
             }
             if j == x-1{//dernière cologne
                 if j!=0{
-                    fmt.Print("C")
+                    fmt.Print("A")
                 }
             }                    
                 }else{//colognes du milieu
@@ -44,4 +44,4 @@ func Raid1d(x,y int) {
             }
         }
     }
-
+}
