@@ -1,7 +1,7 @@
 package piscine
 
-func IterativeFactorial(x int) {
-	if x == int(0)|x == int(1) {
+func IterativeFactorial(x int) int {
+	if 0 == x || 1 == x {
 		return 1
 	} else {
 		res := 1
