@@ -10,9 +10,9 @@ func RecursiveFactorial(x int) int {
 	} else {
 		res := x*RecursiveFactorial(x-1) > math.MaxInt32
 		if res {
-			return x * RecursiveFactorial(x-1)
-		} else {
 			return 0
+		} else {
+			return x * RecursiveFactorial(x-1)
 		}
 	}
 }
