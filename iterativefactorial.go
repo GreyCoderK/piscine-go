@@ -3,7 +3,9 @@ package piscine
 import "math"
 
 func IterativeFactorial(x int) int {
-	if 0 == x || 1 == x {
+	if 0 > x {
+		return 0
+	} else if 0 == x || 1 == x {
 		return 1
 	} else {
 		res := 1
