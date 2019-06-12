@@ -1,4 +1,4 @@
-package exam-01
+package piscine
 
 import "fmt"
 
