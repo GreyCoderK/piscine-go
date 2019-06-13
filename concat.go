@@ -1,9 +1,7 @@
 package piscine
 
-func BasicJoin(strs []string) string {
+func Concat(str1 string, str2 string) string {
 	concat := ""
-	for _, res := range strs {
-		concat += res
-	}
+	concat = str1 + str2
 	return concat
 }
