@@ -4,11 +4,11 @@ import "strings"
 
 func Capitalize(s string) string {
 	res := strings.Title(ToLower(s))
-	indx := strings.Index("_")
+	indx := Index(s, "_")
 	if indx == -1 {
 		return res
 	} else {
-		res = strings.Replace(res, res[indx+1], ToUpper(res[indx+1]), indx)
+		res = strings.Replace(res, string(res[indx+1]), ToUpper(string(res[indx+1])), indx+1)
 		return res
 	}
 }
