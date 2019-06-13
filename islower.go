@@ -3,5 +3,6 @@ package piscine
 import "unicode"
 
 func IsLower(str string) bool {
-	return unicode.IsLower(str)
+	res := []rune(str)
+	return unicode.IsLower(res)
 }
