@@ -1,12 +1,8 @@
 package piscine
 
-import "unicode"
+import "regexp"
 
 func IsAlpha(str string) bool {
-	for _, r := range str {
-		if !unicode.IsLetter(r) {
-			return false
-		}
-	}
-	return true
+	re := regexp.MustCompile("^[a-zA-Z0-9_]*$")
+	return re.MatchString(str)
 }
