@@ -14,11 +14,11 @@ func Reverse(s string) string {
     return reverse 
 }
 
-func PrintNbrBase(nbr int64, str string)(){
+func PrintNbrBase(nbr int32, str string)(){
 	indx := 0
 	
 	for _,res:= range str {
-		if string(res) == "-" || string(res) == "+" || strings.Count(str, string(res)) > 1{
+		if string(res) == "-" || string(res) == "+" || strings.Count(str, string(res)) > 1 {
 			indx = 1
 			break
 		}
@@ -34,10 +34,10 @@ func PrintNbrBase(nbr int64, str string)(){
 		}
 		i:=0
 		nan:=""
-		for nbr >= int64(len(str)) {
-			if nbr >= int64(len(str)) {
-				nan +=string(str[nbr % int64(len(str))])
-				nbr = nbr/int64(len(str))
+		for nbr >= int32(len(str)) {
+			if nbr >= int32(len(str)) {
+				nan +=string(str[nbr % int32(len(str))])
+				nbr = nbr/int32(len(str))
 				i++
 			}
 			
