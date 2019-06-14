@@ -14,9 +14,8 @@ func Reverse(s string) string {
     return reverse 
 }
 
-func PrintNbrBase(nbr int32, str string)(){
+func PrintNbrBase(nbr int, str string)(){
 	indx := 0
-	
 	for _,res:= range str {
 		if string(res) == "-" || string(res) == "+" || strings.Count(str, string(res)) > 1 {
 			indx = 1
@@ -25,8 +24,8 @@ func PrintNbrBase(nbr int32, str string)(){
 	}
 	if indx == 1 || len(str) <= 2{
 		fmt.Println("NV")	
-	}else if math.MaxInt32 < nbr || math.MinInt32 > nbr{
-		fmt.Println(nbr)
+	}else if math.MaxInt32 <nbr || math.MinInt32 > nbr{
+		fmt.Println(int64(nbr))
 	}else{
 		if nbr < 0 {
 			fmt.Print("-")
@@ -34,15 +33,13 @@ func PrintNbrBase(nbr int32, str string)(){
 		}
 		i:=0
 		nan:=""
-		for int(nbr) >= len(str) {
-			if int(nbr) >= len(str) {
-				nan +=string(str[int(nbr) % len(str)])
-				nbr = nbr/int32(len(str))
+		for nbr >= len(str) {
+			if nbr >= len(str) {
+				nan +=string(str[nbr % len(str)])
+				nbr = nbr/len(str)
 				i++
 			}
-			
 		}
-		
 		nan +=string(str[nbr])
 		fmt.Println(Reverse(nan))
 	}
