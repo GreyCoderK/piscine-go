@@ -7,41 +7,34 @@ import (
 
 func PrintNbrBase(nbr int, str string){
 	indx := 0
-	
+	max := ""
+
 	for _,res:= range str {
 		if string(res) == "-" || string(res) == "+" || strings.Count(str, string(res)) > 1{
 			indx = 1
 			break
 		}
+		if string(res) > max {
+			max = string(res)
+		}
 	}
-	
-	if indx == 1 {
+
+	check := "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+	ind := strings.Index(check, max) + 1
+	if indx == 1 || ind < 2 {
 		fmt.Print("NV")	
 	}else{
 		if nbr < 0 {
 			fmt.Print("-")
 			nbr *= -1	
 		}
-		i:=0
-		res := ""
-		for nbr > len(str) {
-			if nbr > len(str) {
-				res += string(str[nbr % len(str)])
-				nbr = int(nbr/len(str))
-				i++
+		for nbr > ind {
+			if nbr > ind {
+				fmt.Print(nbr % ind)
+				nbr = int(nbr/ind)
 			}
-			
-		}
-		
-		res += string(str[nbr])
-		fmt.Print(reverse(res))
-	}
-}
 
-func reverse(s string) string {
-	chars := []rune(s)
-	for i, j := 0, len(chars)-1; i < j; i, j = i+1, j-1 {
-		chars[i], chars[j] = chars[j], chars[i]
+		}
+		fmt.Print(nbr)
 	}
-	return string(chars)
 }
