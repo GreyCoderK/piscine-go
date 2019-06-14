@@ -37,7 +37,7 @@ func PrintNbrBase(nbr int32, str string)(){
 		for int(nbr) >= len(str) {
 			if int(nbr) >= len(str) {
 				nan +=string(str[int(nbr) % len(str)])
-				nbr = int(nbr)/len(str)
+				nbr = nbr/int32(len(str))
 				i++
 			}
 			
