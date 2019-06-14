@@ -4,7 +4,8 @@ import (
 	"strings"
 )
 
-func AtoiBase(s string, base string) int {
+func AtoiBase(s string, str string) int {
+	indx:=0
 	for _,res:= range str {
 		if string(res) == "-" || string(res) == "+" || strings.Count(str, string(res)) > 1 {
 			indx = 1
@@ -16,8 +17,8 @@ func AtoiBase(s string, base string) int {
 	}else{
 		fin := 0
 		for i,res:= range s {
-			ind = stings.Index(base,res)
-			fin += RecursivePower(i,index + 1)
+			ind := strings.Index(base,res)
+			fin += RecursivePower(i,ind + 1)
 		}
 		return fin
 	}
