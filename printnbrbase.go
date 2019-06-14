@@ -23,9 +23,9 @@ func PrintNbrBase(nbr int, str string)(){
 		}
 	}
 	if indx == 1 || len(str) <= 2{
-		fmt.Println("NV")	
+		fmt.Print("NV")	
 	}else if math.MaxInt32 <nbr || math.MinInt32 > nbr{
-		fmt.Println(int64(nbr))
+		fmt.Print(int64(nbr))
 	}else{
 		if nbr < 0 {
 			fmt.Print("-")
@@ -41,6 +41,6 @@ func PrintNbrBase(nbr int, str string)(){
 			}
 		}
 		nan +=string(str[nbr])
-		fmt.Println(Reverse(nan))
+		fmt.Print(Reverse(nan))
 	}
 }
