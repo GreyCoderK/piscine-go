@@ -23,10 +23,10 @@ func PrintNbrBase(nbr int32, str string)(){
 			break
 		}
 	}
-	if math.MaxInt32 < nbr || math.MinInt32 > nbr{
-		fmt.Println(nbr)
-	}else if indx == 1 || len(str) <= 2{
+	if indx == 1 || len(str) <= 2{
 		fmt.Println("NV")	
+	}else if math.MaxInt32 < nbr || math.MinInt32 > nbr{
+		fmt.Println(nbr)
 	}else{
 		if nbr < 0 {
 			fmt.Print("-")
@@ -34,10 +34,10 @@ func PrintNbrBase(nbr int32, str string)(){
 		}
 		i:=0
 		nan:=""
-		for nbr >= int32(len(str)) {
-			if nbr >= int32(len(str)) {
-				nan +=string(str[nbr % int32(len(str))])
-				nbr = nbr/int32(len(str))
+		for nbr >= len(str) {
+			if nbr >= len(str) {
+				nan +=string(str[nbr % len(str)])
+				nbr = nbr/len(str)
 				i++
 			}
 			
