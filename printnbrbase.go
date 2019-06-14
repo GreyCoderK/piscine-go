@@ -23,16 +23,25 @@ func PrintNbrBase(nbr int, str string){
 			nbr *= -1	
 		}
 		i:=0
+		res := ""
 		for nbr > len(str) {
 			if nbr > len(str) {
-				defer fmt.Print(string(str[nbr % len(str)]))
+				res += string(str[nbr % len(str)])
 				nbr = int(nbr/len(str))
 				i++
 			}
 			
 		}
 		
-		defer fmt.Print(string(str[nbr]))
-		
+		res += string(str[nbr])
+		fmt.Print(reverse(res))
 	}
+}
+
+func reverse(s string) string {
+	chars := []rune(s)
+	for i, j := 0, len(chars)-1; i < j; i, j = i+1, j-1 {
+		chars[i], chars[j] = chars[j], chars[i]
+	}
+	return string(chars)
 }
