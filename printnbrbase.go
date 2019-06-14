@@ -1,6 +1,7 @@
 package piscine
 
 import(
+	"math"
 	"fmt"
 	"strings"
 )
