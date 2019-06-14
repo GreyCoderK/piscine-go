@@ -43,7 +43,7 @@ func PrintNbrBase(nbr int64, str string)(){
 			
 		}
 		
-		nan +=string(str[int64(nbr)])
+		nan +=string(str[nbr])
 		fmt.Println(Reverse(nan))
 	}
 }
