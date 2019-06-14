@@ -23,7 +23,7 @@ func PrintNbrBase(nbr int64, str string)(){
 			break
 		}
 	}
-	if math.MaxInt64 < nbr || math.MinInt64 > nbr{
+	if math.MaxInt32 < nbr || math.MinInt32 > nbr{
 		fmt.Println(nbr)
 	}else if indx == 1 || len(str) <= 2{
 		fmt.Println("NV")	
