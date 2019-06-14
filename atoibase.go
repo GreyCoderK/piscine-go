@@ -18,7 +18,7 @@ func AtoiBase(s string, str string) int {
 		fin := 0
 		for i,res:= range s {
 			ind := strings.Index(str,string(res))
-			fin += RecursivePower(ind+1,i)
+			fin += RecursivePower(ind+1,len(s) - i)
 		}
 		return fin
 	}
