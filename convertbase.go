@@ -2,6 +2,7 @@ package piscine
 
 import (
 	"math"
+	"strings"
 )
 
 func ConvertBase(nbr, baseFrom, baseTo string) string {
