@@ -1,9 +1,9 @@
 package piscine
 
-
-func MakedRange(min, max int) []int {
+func MakeRange(min, max int) []int {
         if min >= max {
-                return []int
+                var tab []int = nil
+		return tab
         }else{
                 tab := make([]int,max-min)
 		j:=0
