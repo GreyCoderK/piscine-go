@@ -3,7 +3,7 @@ package piscine
 
 func MakedRange(min, max int) []int {
         if min >= max {
-                return []
+                return []int
         }else{
                 tab := make([]int,max-min)
 		j:=0
