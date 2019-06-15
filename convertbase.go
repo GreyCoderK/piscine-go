@@ -1,7 +1,6 @@
 package piscine
 
 import (
-	"strconv"
 	"math"
 )
 
