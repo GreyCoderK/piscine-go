@@ -5,8 +5,7 @@ func AppendRange(min, max int) []int {
 		var tab []int = nil
 		return tab
 	}else{
-		var diff int = max - min
-		tab := [diff]int{}
+		tab := []int{}
 		for i:= min;min <max;i++ {
 			tab = append(tab,i)
 		}
