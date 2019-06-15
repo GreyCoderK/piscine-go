@@ -3,6 +3,6 @@ package piscine
 import "strings"
 
 func SplitWhiteSpaces(str string) []string {
-	tab := strings.Split(str, " ")
+	tab := strings.Fields(str)
 	return tab
 }
