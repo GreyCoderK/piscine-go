@@ -1,9 +1,9 @@
 package piscine
 
-
 func AppendRange(min, max int) []int {
 	if min >= max {
-		return []
+		var tab []int = nil
+		return tab
 	}else{
 		const size = max-min
 		tab := [size]int
