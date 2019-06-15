@@ -6,7 +6,7 @@ import (
 )
 
 func ConvertBase(nbr, baseFrom, baseTo string) string {
-	return  NbrBase(AtoiBase(nbr, baseFrom), baseTo))
+	return  NbrBase(AtoiBase(nbr, baseFrom), baseTo)
 }
 
 func NbrBase(nbr int, str string) string {
