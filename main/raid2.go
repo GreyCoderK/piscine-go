@@ -129,8 +129,11 @@ func main(){
 		fmt.Println("Error")
 	}else{
 		if IsValideInput(args, &row, &col, &block){
-			Backtracking(&row,&col, &block)
-			printBoard(row)
+			if !Backtracking(&row,&col, &block) {
+				fmt.Println("Error")
+			}else{
+				printBoard(row)
+			}
 		}else{
 			fmt.Println("Error")
 		}
