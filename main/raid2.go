@@ -27,8 +27,6 @@ func IsValideInput(args []string) bool {
 			for _,item:= range res {
 				if string(item) != "." && strings.Count(res,string(item)) > 1 {
 					return false
-				}else{
-					
 				}
 			}
 		}
@@ -69,7 +67,7 @@ func EmptyCell(grille **[]string) bool {
 	return count == 0
 }
 
-func Backtracking(grille **[]string) bool {
+func Backtracking(grille *[]string) bool {
 	if !EmptyCell(*grille){
 		return true
 	}
@@ -94,13 +92,19 @@ func Backtracking(grille **[]string) bool {
 	return false
 }
 
+func RemplirGrille(grille *string[][], value []string) {
+	for i,res:=range value {
+		(*grille)[i] = piscine.Split(value,"")
+	}
+}
+
 func main(){
 	args:= os.Args[1:] 
 	if len(args) == 0 {
 		fmt.Println("Error")
 	}else{
 		if IsValideInput(args){
-			grille :=args
+			var grille [][]string
 			Backtracking(grille)
 			printBoard(grille)
 		}else{
