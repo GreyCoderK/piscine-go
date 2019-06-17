@@ -10,9 +10,11 @@ import (
 
 func IsValideInput(args []string, grille, vertical, block *[][]string) bool {
 	lon := 0
-	if len(args) == 0|| len(args) == 1 || (piscine.Sqrt(len(args)) == 0 && len(args) > 1) {
+
+	if len(args) == 0 || len(args) == 1 || (piscine.Sqrt(len(args)) == 0 && len(args) > 1) {
 		return false
 	}
+
 	for _,res:= range args {
 		if reflect.TypeOf(res) != reflect.TypeOf("a") {
 			return false
@@ -26,19 +28,25 @@ func IsValideInput(args []string, grille, vertical, block *[][]string) bool {
 			}
 		}
 	}
-	for i,item:= range res {
-		if string(item) != "." && strings.Count(res,string(item)) > 1 {
-			return false
+
+	for i,item:= range args {
+		for _,res:= range item {
+			if string(res) != "." && strings.Count(item,string(res)) > 1 {
+				return false
+			}
 		}
-		*(grille)[i] = pisicne.Split(res, "") 
+
+		for j,el:= range piscine.Split(item, ""){
+			(*grille)[i][j] = string(el)
+		}
 	}
 	for i:=0; i < lon; i++ {
 		for j:=0; j < lon; j++ {
-			*(vertical)[j][i] = *(grille)[i][j]
-			*(block)[3(i/3)+(j/3)] = append(*(block)[3(i/3)+(j/3)],*(grille)[i][j])
+			(*vertical)[j][i] = (*grille)[i][j]
+			(*block)[3*(i/3)+(j/3)] = append((*block)[3*(i/3)+(j/3)],(*grille)[i][j])
 		}
 	}
-	
+
 	return IsValidGrille(grille, vertical, block, lon)
 }
 
@@ -82,7 +90,7 @@ func EmptyCell(grille *[][]string) bool {
 	count := 0
 	for i:=0;i < 9; i++ {
 		for j:= 0; j<9; j++ {
-			if grille[i][j] == "." {
+			if (*grille)[i][j] == "." {
 				count++
 			}
 		}
@@ -91,19 +99,19 @@ func EmptyCell(grille *[][]string) bool {
 }
 
 func IsValidGrille(grille, vertical, block *[][]string, lon int) bool {
-	if hasDuplicate(&grille, lon) || hasDuplicate(&block, lon) || hasDuplicate(&vertical, lon) {
+	if hasDuplicate(grille, lon) || hasDuplicate(block, lon) || hasDuplicate(vertical, lon) {
 		return false
 	}
 	return true
 }
 
 func Backtracking(grille, vertical, block *[][]string) bool {
-	if !EmptyCell(&grille){
+	if !EmptyCell(grille){
 		return true
 	}
 	for i:=0; i < 9; i++ {
 		for j := 0; j < 9; j++ {
-			if (*grille)[i][j] == '.' {
+			if (*grille)[i][j] == string(".") {
 				for candidate := 9; candidate >= 1; candidate-- {
 					(*grille)[i][j] = string(candidate)
 					if IsValidGrille(grille, vertical,block,9) {
@@ -124,7 +132,12 @@ func Backtracking(grille, vertical, block *[][]string) bool {
 
 func main(){
 	args:= os.Args[1:]
-	row, col, block [][]string 
+	var (
+		row [][]string
+		col [][]string
+		block [][]string
+	)
+
 	if len(args) == 0 {
 		fmt.Println("Error")
 	}else{
