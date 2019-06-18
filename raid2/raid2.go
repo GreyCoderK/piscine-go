@@ -15,9 +15,13 @@ func main() {
 	if iscorrectparam(param){
 		board := parseInput(param)
 		if backtrack(&board) {
-			printBoard(board)
+			if isValid(&board) && isBoardValid(&board){
+				printBoard(board)
+			}else {
+				fmt.Printf("Error")
+			}
 		} else {
-			fmt.Printf("The Sudoku can't be solved.")
+			fmt.Printf("Error")
 		}
 	}else{
 		fmt.Println("Error")
@@ -63,8 +67,6 @@ func hasEmptyCell(board *[9][9]int) bool {
 }
 
 func isBoardValid(board *[9][9]int) bool {
-
-	//check duplicates by row
 	for row := 0; row < 9; row++ {
 		counter := [10]int{}
 		for col := 0; col < 9; col++ {
@@ -75,7 +77,6 @@ func isBoardValid(board *[9][9]int) bool {
 		}
 	}
 
-	//check duplicates by column
 	for row := 0; row < 9; row++ {
 		counter := [10]int{}
 		for col := 0; col < 9; col++ {
@@ -86,7 +87,6 @@ func isBoardValid(board *[9][9]int) bool {
 		}
 	}
 
-	//check 3x3 section
 	for i := 0; i < 9; i += 3 {
 		for j := 0; j < 9; j += 3 {
 			counter := [10]int{}
@@ -102,6 +102,60 @@ func isBoardValid(board *[9][9]int) bool {
 	}
 
 	return true
+}
+
+func isValid(board *[9][9]int) bool {
+	for row := 0; row < 9; row++ {
+		counter := 0
+		for col := 0; col < 9; col++ {
+			counter+=board[row][col]
+		}
+		if 45!= counter {
+			return false
+		}
+	}
+
+	for row := 0; row < 9; row++ {
+		counter := 0
+		for col := 0; col < 9; col++ {
+			counter+=board[col][row]
+		}
+		if 45!= counter {
+			return false
+		}
+	}
+
+	for i := 0; i < 9; i += 3 {
+		for j := 0; j < 9; j += 3 {
+			counter := 0
+			for row := i; row < i+3; row++ {
+				for col := j; col < j+3; col++ {
+					counter+=board[row][col]
+				}
+			}
+			if 45!= counter {
+				return false
+			}
+		}
+	}
+
+	return true
+}
+
+func parseInput(input string) [9][9]int {
+	board := [9][9]int{}
+	scanner := bufio.NewScanner(strings.NewReader(input))
+
+	scanner.Split(bufio.ScanRunes)
+
+	for row := 0; row < 9; row++ {
+		for col := 0; col < 9; col++ {
+			scanner.Scan()
+			i1, _ := strconv.Atoi(scanner.Text())
+			board[row][col] = i1
+		}
+	}
+	return board
 }
 
 func hasDuplicates(counter [10]int) bool {
