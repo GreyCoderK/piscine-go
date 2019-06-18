@@ -15,32 +15,31 @@ func IsValideInput(args []string, grille, vertical, block *[][]string) bool {
 		return false
 	}
 
-	for _,res:= range args {
+	for i,res:= range args {
 		if reflect.TypeOf(res) != reflect.TypeOf("a") {
 			return false
 		}else{
-			if lon == 0 {
-				lon =len(res)
+			if lon == 0 && i == 0 {
+				lon = len(res)
 			}else{
 				if lon != len(res) {
 					return false
 				}
 			}
 		}
-	}
 
-	for i,item:= range args {
-		for _,res:= range item {
-			if string(res) != "." && strings.Count(item,string(res)) > 1 {
+		for _,item:= range res {
+			if string(item) != "." && strings.Count(res,string(item)) > 1 {
 				return false
 			}
 		}
-
-		for j,el:= range piscine.Split(item, ""){
-			(*grille)[i][j] = string(el)
-		}
+		(*grille) = append((*grille),[]string{})
+		(*grille)[i] =  piscine.Split(res,"")
 	}
+
 	for i:=0; i < lon; i++ {
+		(*block) =  append((*block),[]string{})
+		(*vertical) = append((*vertical),[]string{})
 		for j:=0; j < lon; j++ {
 			(*vertical)[j][i] = (*grille)[i][j]
 			(*block)[3*(i/3)+(j/3)] = append((*block)[3*(i/3)+(j/3)],(*grille)[i][j])
@@ -142,7 +141,7 @@ func main(){
 		fmt.Println("Error")
 	}else{
 		if IsValideInput(args, &row, &col, &block){
-			if !Backtracking(&row,&col, &block) {
+			if Backtracking(&row,&col, &block) {
 				fmt.Println("Error")
 			}else{
 				printBoard(row)
