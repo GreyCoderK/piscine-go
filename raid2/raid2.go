@@ -178,26 +178,22 @@ func printBoard(board [9][9]int) {
 				fmt.Print(" ")
 			} 
 		}
-		if row == 2 || row == 5 || row == 8 {
-			fmt.Print("\n")
-		} else {
-			fmt.Println()
-		}
+		fmt.Println()
 	}
 }
 
 func iscorrectparam(param string) bool{
 	board := parseInput(param)
+	
 	if len(param)!=81{
 		return false
 	}
+	
 	for _,val:= range param{
 		if !((48 <= val && val <= 57)||val==46){
 			return false
 		}
 	}
-	if !isBoardValid(&board){
-		return false
-	}
-	return true
+	
+	return isBoardValid(&board)
 }
