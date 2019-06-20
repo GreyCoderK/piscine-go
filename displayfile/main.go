@@ -16,7 +16,7 @@ func main(){
 		file, err:= os.Open(string(args[0]))
 		
 		if err != nil {
-			fmt.Printf("%v", strings.Trim(err.Error(), "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\n"))
+			fmt.Printf("%s", strings.Replace(err.Error(), "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\n", "\n", -1))
 		}
 		arr := make([]byte,14)
 		file.Read(arr)
