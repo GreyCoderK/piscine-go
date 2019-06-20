@@ -17,14 +17,14 @@ func readFile(s string) {
         fmt.Println(err.Error())
     }
 
-    fmt.Printf("%s\n\n", data)
+    fmt.Printf("%s", data)
     file.Close()
 }
 
 func main(){
 	args := os.Args[1:]
 	if 0 == len(args) {
-		fmt.Println(os.Args[0])
+		fmt.Print()
 	}else{
 		for _,res:= range os.Args[1:] {
 			readFile(res)
