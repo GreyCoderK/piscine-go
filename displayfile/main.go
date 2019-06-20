@@ -16,7 +16,7 @@ func main(){
 		file, err:= ioutil.ReadFile(args[0])
 		
 		if err != nil {
-			fmt.Print(err)
+			fmt.Println(err)
 		}
 		fmt.Print(string(file))
 	}
