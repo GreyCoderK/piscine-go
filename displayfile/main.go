@@ -18,6 +18,6 @@ func main(){
 		if err != nil {
 			fmt.Print(err)
 		}
-		return string(file)
+		fmt.Print(string(file))
 	}
 }
