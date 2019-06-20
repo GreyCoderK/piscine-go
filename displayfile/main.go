@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 	"fmt"
-	"strings"
+	"io/ioutil"
 )
 
 func main(){
@@ -16,11 +16,8 @@ func main(){
 		file, err:= os.Open(string(args[0]))
 		
 		if err != nil {
-			fmt.Printf("%s", strings.Replace(err, "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\n", "\n", -1))
+			fmt.Print(err)
 		}
-		arr := make([]byte,14)
-		file.Read(arr)
-		fmt.Println(string(arr))
-		file.Close()
+		return string(file)
 	}
 }
