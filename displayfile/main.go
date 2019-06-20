@@ -13,7 +13,7 @@ func main(){
 	}else if len(args) >= 2 {
 		fmt.Println("Too many arguments")
 	}else{
-		file, err:= os.Open(string(args[0]))
+		file, err:= ioutil.ReadFile(args[0])
 		
 		if err != nil {
 			fmt.Print(err)
