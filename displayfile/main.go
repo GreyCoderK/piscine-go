@@ -15,7 +15,7 @@ func main(){
 		file, err:= os.Open(string(args[0]))
 		
 		if err != nil {
-			fmt.Print("something wrong",err.Error())
+			fmt.Println(err)
 		}
 		arr := make([]byte,14)
 		file.Read(arr)
