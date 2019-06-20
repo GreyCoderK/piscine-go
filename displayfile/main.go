@@ -15,7 +15,7 @@ func main(){
 		file, err:= os.Open(string(args[0]))
 		
 		if err != nil {
-			fmt.Print(err.Error())
+			fmt.Printf("[%q]", strings.Trim(err.Error(), "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\n"))
 		}
 		arr := make([]byte,14)
 		file.Read(arr)
