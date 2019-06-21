@@ -19,12 +19,11 @@ func main(){
         			data, err := ioutil.ReadAll(file)
         			if err != nil {
                  			fmt.Println(err.Error())
-					break outer
+					break
          			}else{
          				fmt.Printf("%s", data)
 				}
     			}
-			file.Close()
 		}
 	}
 }
