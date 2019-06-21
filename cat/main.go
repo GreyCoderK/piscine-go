@@ -6,17 +6,13 @@ import (
     "io/ioutil"
 )
 
-func readFile(s string) {
-    file.Close()
-}
-
 func main(){
 	args := os.Args[1:]
 	if 0 == len(args) {
 		fmt.Print()
 	}else{
-		for _,res:= range os.Args[1:] {
-			file, err := os.Open(res)
+		for _,s:= range os.Args[1:] {
+			file, err := os.Open(s)
     			if err != nil {
     			    fmt.Println(err.Error())
     			}else{
