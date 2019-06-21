@@ -10,14 +10,14 @@ func readFile(s string) {
     file, err := os.Open(s)
     if err != nil {
         fmt.Println(err.Error())
+    }else{
+	data, err := ioutil.ReadAll(file)
+   	if err != nil {
+       		 fmt.Println(err.Error())
+   	 }
+   	 fmt.Printf("%s", data)
     }
 
-    data, err := ioutil.ReadAll(file)
-    if err != nil {
-        fmt.Println(err.Error())
-    }
-
-    fmt.Printf("%s", data)
     file.Close()
 }
 
