@@ -15,6 +15,7 @@ func main(){
 			file, err := os.Open(s)
     			if err != nil {
     			    fmt.Println(err.Error())
+			    break
     			}else{
         			data, err := ioutil.ReadAll(file)
         			if err != nil {
