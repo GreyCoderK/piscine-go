@@ -16,7 +16,7 @@ func main(){
 		fmt.Print()
 	}else{
 		for _,res:= range os.Args[1:] {
-			file, err := os.Open(s)
+			file, err := os.Open(res)
     			if err != nil {
     			    fmt.Println(err.Error())
     			}else{
