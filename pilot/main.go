@@ -10,7 +10,7 @@ func main() {
 	donnie.Name = "Donnie"
 	donnie.Life = 100.0
 	donnie.Age = 24
-	donnie.Aircraft = piscine.AIRCRAFT1
+	donnie.Aircraft = 1
 
 	fmt.Println(donnie)
 }
