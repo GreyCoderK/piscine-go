@@ -7,7 +7,7 @@ import(
 
 func main(){
 	res := ""
-	args = os.Args[1:]
+	args := os.Args[1:]
 	check := []string{"01", "galaxy", "galaxy 01"}
 	for _, res:= range args {
 		for _,item := range check {
