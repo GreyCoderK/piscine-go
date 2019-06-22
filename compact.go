@@ -1,11 +1,11 @@
 package piscine
 
 func Compact(ptr *[]string, length int) int {
-	cmp := 0
-	for_, res := range ptr {
-		if *(res) == " " {
-			length -= 1
+	compte := 0
+	for i:=0; i < length; i++{
+		if (*ptr)[i] != " " {
+			compte++
 		}
 	}
-	return length
+	return compte
 }
