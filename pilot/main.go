@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	student ".."
+	piscine ".."
 )
 
 func main() {
@@ -10,7 +10,7 @@ func main() {
 	donnie.Name = "Donnie"
 	donnie.Life = 100.0
 	donnie.Age = 24
-	donnie.Aircraft = student.AIRCRAFT1
+	donnie.Aircraft = piscine.AIRCRAFT1
 
 	fmt.Println(donnie)
 }
