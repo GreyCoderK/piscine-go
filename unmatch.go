@@ -8,7 +8,7 @@ func Unmatch(arr []int) int {
 				fois++
 			}
 		}
-		if fois == 1 {
+		if fois == 1 || fois % 2 == 1 {
 			return res
 		}
 	}
