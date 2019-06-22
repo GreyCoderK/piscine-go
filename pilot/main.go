@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var donnie student.Pilot
+	var donnie piscine.Pilot
 	donnie.Name = "Donnie"
 	donnie.Life = 100.0
 	donnie.Age = 24
