@@ -27,7 +27,7 @@ func ListPushBack(l *List, data interface{}) {
         	}
         
         	//enregistrement du dernier element a la liste
-        	listItem.Next = noeud
-        	l.Tail = noeud
+        	listItem.Next = n
+        	l.Tail = n
 	}
 }
