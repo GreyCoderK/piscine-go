@@ -11,23 +11,13 @@ type List struct {
 }
 
 func ListPushBack(l *List, data interface{}) {
-	// initialisation du noeud
-	noeud := &NodeL{Data:data}
-	
-	//verification que la liste n'est pas nulle
-	if l.Head == nil {
-		l.Head = noeud
+	n:=&NodeL{Data:data}
+	if l.Head==nil{
+		l.Head=n
+	}else if l.Tail==nil{
+		l.Tail=n
 	}else{
-		//sauvegarde du premier element
-		listItem := l.Head
-		
-		//parcours pour se mettre a la fin de la list
-		for listItem.Next != nil {
-			listItem = listItem.Next
-		}
-		
-		//enregistrement du dernier element a la liste
-		listItem.Next = noeud
-		l.Tail = noeud
+		tail := l.Tail
+		tail.Next=n
 	}
 }
