@@ -19,6 +19,15 @@ func ListPushBack(l *List, data interface{}) {
 		head.Next = n
 		l.Tail = n 
         }else{
-		l.Tail.Next = n
+		listItem := l.Tail
+        
+        	//parcours pour se mettre a la fin de la list
+        	for listItem.Next != nil {
+            		listItem = listItem.Next
+        	}
+        
+        	//enregistrement du dernier element a la liste
+        	listItem.Next = noeud
+        	l.Tail = noeud
 	}
 }
