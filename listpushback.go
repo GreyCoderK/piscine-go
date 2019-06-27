@@ -7,6 +7,7 @@ type NodeL struct {
 
 type List struct {
 	Head *NodeL
+	Tail *NodeL
 }
 
 func ListPushBack(l *List, data interface{}) {
@@ -15,13 +16,10 @@ func ListPushBack(l *List, data interface{}) {
                 l.Head=n
         }else{
 		listItem := l.Head
-        
-        	//parcours pour se mettre a la fin de la list
         	for listItem.Next != nil {
             		listItem = listItem.Next
         	}
-        
-        	//enregistrement du dernier element a la liste
         	listItem.Next = n
+		l.Tail = n
 	}
 }
