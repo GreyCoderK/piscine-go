@@ -31,7 +31,7 @@ func IsNotNumeric_node(node *NodeL) bool {
 }
 
 func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
-	current := l.head
+	current := l.Head
 	for current != nil {
 		if cond(current) {
 			f(current)
