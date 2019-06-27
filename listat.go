@@ -2,10 +2,10 @@ package piscine
 
 func ListAt(l *NodeL, pos int) *NodeL{
 	if pos == 1 {
-		return l.Head
+		return l
 	}else{
 		cmpt := 1
-		current := l.Head
+		current := l
 		for current.Next != nil {
 			current = current.Next
 			cmpt++
