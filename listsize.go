@@ -1,23 +1,13 @@
 package piscine
 
-type NodeL struct {
-	Data interface{}
-	Next *NodeL
-}
-
-type List struct {
-	Head *NodeL
-	Tail *NodeL
-}
-
 func ListSize(l *List) int {
-	if l.head == nil{
+	if l.Head == nil{
 		return 0
 	}else{
-		current := l.head
+		current := l.Head
 		cmpt := 1
 		for current.Next != nil {
-			current = current.next
+			current = current.Next
 			cmpt++
 		}
 		return cmpt
