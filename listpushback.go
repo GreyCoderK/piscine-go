@@ -14,7 +14,7 @@ func ListPushBack(l *List, data interface{}) {
         if l.Head==nil{
                 l.Head=n
         }else{
-		listItem := l.head
+		listItem := l.Head
         
         	//parcours pour se mettre a la fin de la list
         	for listItem.Next != nil {
