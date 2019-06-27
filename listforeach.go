@@ -1,6 +1,6 @@
 package piscine
 
-func ListForEach(l *List, f func(*NodeL)) {
+func ListForEach(l *List, f func(*List)) {
 	current := l.Head
 	for current != nil {
 		f(current)
