@@ -1,6 +1,6 @@
 package piscine
 
-func ListForEach(l *List, f func(*interface)) {
+func ListForEach(l *List, f func(*interface{})) {
 	current := l.Head
 	for current != nil {
 		f(current)
