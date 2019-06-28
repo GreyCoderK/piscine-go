@@ -12,7 +12,7 @@ func ListRemoveIf(l *List, data_ref interface{}) {
 			if previous == nil {
 				l.Head = current.Next 	
 			}else{
-				previous = current
+				current = previous
 				previous.Next = current.Next
 			}
 		}else{
