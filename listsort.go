@@ -11,15 +11,14 @@ func ListSort(l *NodeI) *NodeI {
 	next := l.Next
 	var first,temp *NodeI
 	
-	for l == nil {
-		l = l.Next
+	if l == nil || next == nil{
+		return  l 
 	}
 
         for current != nil {
 		if cmpt == 0 {
 			first = current
 			cmpt++
-			temp = next.Next
 		}
 		if cmpt > 0 {
 			if temp == nil {
