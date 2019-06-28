@@ -13,24 +13,24 @@ func ListSort(l *NodeI) *NodeI {
 	current := l
         cmpt := 0
 	next := l.Next
-	var first,temp *NodeI
+	//var first,temp *NodeI
 	
 	if next == nil{
 		return  l 
 	}
 
         for current != nil {
-		if cmpt == 0 {
-			first = current
-			cmpt++
-		}
-		if cmpt > 0 {
-			if temp == nil {
-				return first
-			}else{
-				next = temp
-			}
-		}
+		//if cmpt == 0 {
+			//first = current
+		//	cmpt++
+		//}
+		//if cmpt > 0 {
+			//if temp == nil {
+			//	return first
+			//}else{
+			//	next = temp
+			//}
+		//}
 		for next != nil {
                         if current.Data > next.Data {
                                 current.Data, next.Data = next.Data,current.Data	
@@ -38,7 +38,7 @@ func ListSort(l *NodeI) *NodeI {
                         next = next.Next
                 }
                 current = current.Next
-		temp = current.Next
+		//temp = current.Next
         }
-	return first
+	return current
 }
