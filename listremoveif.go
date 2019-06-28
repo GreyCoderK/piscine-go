@@ -5,7 +5,7 @@ func ListRemoveIf(l *List, data_ref interface{}) {
 		return
 	}
 	current := l.Head
-	var previous *Node
+	var previous *NodeL
  
 	for current != nil {
 		if current.Data == data_ref {
