@@ -6,40 +6,27 @@ type NodeI struct {
 }
 
 func ListSort(l *NodeI) *NodeI {
-        if l == nil {
+        cmpt := 0
+	var first *NodeI
+	
+	if l == nil || l.Next == nil {
 		return l
 	}
-	current := l
-        cmpt := 0
-	next := l.Next
-	
-	if next == nil {
-		return current
-	} 
-	
-	var first,temp *NodeI	
-
-        for current != nil {
+        
+        for l != nil {
+		next := l.Next
 		if cmpt == 0 {
-			first = current
+			first = l
 			cmpt++
-			temp = next.Next
 		}
-		if cmpt > 0 {
-			if temp == nil {
-				return first
-			}else{
-				next = temp
-			}
-		}
+		
 		for next != nil {
-                        if current.Data > next.Data {
-                                current.Data, next.Data = next.Data,current.Data	
+                        if l.Data > next.Data {
+                                l.Data, next.Data = next.Data,l.Data	
 			}
                         next = next.Next
                 }
-                current = current.Next
-		temp = current.Next
+		l = l.Next
         }
 	return first
 }
