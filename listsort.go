@@ -13,7 +13,7 @@ func ListSort(l *NodeI) *NodeI {
 	current := l
         cmpt := 0
 	next := l.Next
-	var first,temp *NodeI
+	var temp *NodeI
 	
 	if next == nil{
 		return  l 
@@ -21,7 +21,6 @@ func ListSort(l *NodeI) *NodeI {
 
         for current != nil {
 		if cmpt == 0 {
-			first = current
 			cmpt++
 		}
 		if cmpt > 0 {
