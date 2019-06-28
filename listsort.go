@@ -10,6 +10,10 @@ func ListSort(l *NodeI) *NodeI {
         cmpt := 0
 	next := l.Next
 	var first,temp *NodeI
+	
+	for l.Data == nil {
+		l = l.Next
+	}
 
         for current != nil {
 		if cmpt == 0 {
