@@ -11,7 +11,7 @@ func ListSort(l *NodeI) *NodeI {
 	next := l.Next
 	var first,temp *NodeI
 	
-	for l.Data == nil {
+	for l == nil {
 		l = l.Next
 	}
 
