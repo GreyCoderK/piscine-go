@@ -6,12 +6,16 @@ type NodeI struct {
 }
 
 func ListSort(l *NodeI) *NodeI {
+	if l == nil {
+		return l
+	}
+
 	current := l
         cmpt := 0
 	next := l.Next
 	var first,temp *NodeI
 	
-	if l == nil || next == nil{
+	if next == nil{
 		return  l 
 	}
 
