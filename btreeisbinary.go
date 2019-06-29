@@ -1,19 +1,22 @@
 package piscine
 
 func BTreeIsBinary(root *TreeNode) bool {
-        if root == nil {
-                return true
-        }
-	
-	if (root.Left == nil && root.Right != nil) || (root.Left != nil && root.Right == nil) {
-		return false
-	}else if root.Left != nil && root.Right != nil {
-		return true
+        prev := &TreeNode{}
+	return isBSTUtil(root, prev)
+}
+
+func BTreeInsertData(root *TreeNode, data string) *TreeNode {
+
+	if root == nil {
+		return &TreeNode{Data: data}
 	}
-        
-	if root.Left.Data > root.Data || root.Right.Data < root.Data {
-                return false
-        }
-        
-	return BTreeIsBinary(root.Left) && BTreeIsBinary(root.Right)
+
+	if data < root.Data {
+		root.Left = BTreeInsertData(root.Left, data)
+		root.Left.Parent = root
+	} else if data > root.Data {
+		root.Right = BTreeInsertData(root.Right, data)
+		root.Right.Parent = root
+	}
+	return root
 }
