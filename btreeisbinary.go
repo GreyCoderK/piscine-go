@@ -5,18 +5,18 @@ func BTreeIsBinary(root *TreeNode) bool {
 	return isBSTUtil(root, prev)
 }
 
-func BTreeInsertData(root *TreeNode, data string) *TreeNode {
-
-	if root == nil {
-		return &TreeNode{Data: data}
+func isBSTUtil(root, prev *TreeNode) bool{
+	if root != nil {
+		if !isBSTUtil(root.Left, prev) {
+          		return false
+		}
+		
+		if prev != nil && root.Data <= prev.Data {
+          		return false
+		}
+		
+		prev = root
+		return isBSTUtil(root.Right, prev)
 	}
-
-	if data < root.Data {
-		root.Left = BTreeInsertData(root.Left, data)
-		root.Left.Parent = root
-	} else if data > root.Data {
-		root.Right = BTreeInsertData(root.Right, data)
-		root.Right.Parent = root
-	}
-	return root
+	return true
 }
